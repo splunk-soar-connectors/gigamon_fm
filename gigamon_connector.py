@@ -104,8 +104,8 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build url
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
         URL = ("https://"
                + server
                + "/api/v1.3/maps/"
@@ -159,9 +159,9 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # url parameters
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
-        ruleType = param['Rule_type']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
+        ruleType = param['rule_type']
         URL = ("https://"
                + server
                + "/api/v1.3/maps/"
@@ -226,8 +226,8 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build url
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
         ruleID = param['Rule_ID']
         URL = ("https://"
                + server

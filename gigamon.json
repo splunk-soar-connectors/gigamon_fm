@@ -1,34 +1,41 @@
 {
     "appid"                 : "876ab991-313e-48e7-bccd-e8c9650c239a",
     "name"                  : "Gigamon FM",
-    "description"           : "Gigamon FM API",
+    "description"           : "This App implements various <b>investigation</b> and <b>configurational management</b> actions on the Gigamon FM device",
     "publisher"             : "Gigamon Inc.",
-    "package_name"          : "Gigamon FM",
-    "type"                  : "information",
-    "license"               : "None",
-    "main_module"           : "gigamon_connector.py",
-    "app_version"           : "0.0.01",
+    "package_name"          : "phantom_gigamonfm",
+    "type"                  : "network device",
+    "license"               : "Copyright (c) Gigamon 2017",
+    "main_module"           : "gigamon_connector.pyc",
+    "app_version"           : "1.0.0",
     "utctime_updated"       : "2017-06-15:15:31.000000Z",
     "product_vendor"        : "Gigamon",
     "product_name"          : "Gigamon FM",
     "product_version_regex" : ".*",
-    "min_phantom_version"   : "1.2.236",
+    "min_phantom_version"   : "2.1.465",
     "logo"                  : "gigamon.png",
     "configuration"         : {
-          "FM_server"       : {
+          "server"       : {
             "description"   : "FM Server IP/FQDN",
             "data_type"     : "string",
-            "required"      : true
+            "required"      : true,
+            "order"         : 0
           },
-          "FM_user"         : {
+          "ph"         : {
+            "data_type"     : "ph",
+            "order"         : 1
+          },
+          "username"         : {
             "description"   : "FM user name",
             "data_type"     : "string",
-            "required"      : true
+            "required"      : true,
+            "order"         : 1
           },
-          "FM_password"     : {
+          "password"     : {
             "description"   : "FM user password",
             "data_type"     : "password",
-            "required"      : true
+            "required"      : true,
+            "order"         : 2
           }
     },
     "actions"               : [
@@ -50,18 +57,20 @@
         "identifier"        : "get_map",
         "read_only"         : true,
         "parameters"        : {
-          "Cluster_ID"      : {
-            "contains"      : ["Cluster_ID"],
+          "cluster_id"      : {
+            "contains"      : ["cluster id"],
             "description"   : "Node IP/FQDN",
             "data_type"     : "string",
             "primary"       : true,
-            "required"      : true
+            "required"      : true,
+            "order"         : 0
           },
-          "Map_alias"       : {
-            "contains"      : ["Map_alias"],
+          "map_alias"       : {
+            "contains"      : ["map alias"],
             "description"   : "Name of the map to get",
             "data_type"     : "string",
-            "required"      : true
+            "required"      : true,
+            "order"         : 1
           }
         },
         "render"            : {
@@ -76,11 +85,11 @@
             "data_type"     : "string"
           },
           {
-            "data_path"     : "action_result.parameter.Map_alias",
+            "data_path"     : "action_result.parameter.map_alias",
             "column_order"  : 1,
             "column_name"   : "alias",
             "data_type"     : "string",
-            "contains"      : ["Map_alias"]
+            "contains"      : ["map alias"]
           },
           {
             "data_path"     : "action_result.summary",
@@ -88,9 +97,9 @@
             "column_name"   : "summary"
           },
           {
-            "data_path"     : "action_result.parameter.Cluster_ID",
+            "data_path"     : "action_result.parameter.cluster_id",
             "data_type"     : "string",
-            "contains"      : ["Cluster_ID"],
+            "contains"      : ["cluster id"],
             "column_order"  : 0,
             "column_name"   : "Cluster ID"
           },
@@ -116,34 +125,40 @@
         "identifier"        : "post_rule",
         "read_only"         : true,
         "parameters"        : {
-          "Cluster_ID"      : {
-            "contains"      : ["Cluster_ID"],
+          "cluster_id"      : {
+            "contains"      : ["cluster id"],
             "description"   : "Node IP/FQDN",
             "data_type"     : "string",
             "primary"       : true,
-            "required"      : true
+            "required"      : true,
+            "order"         : 0
             },
-          "Map_alias"       : {
-            "contains"      : ["Map_alias"],
+          "map_alias"       : {
+            "contains"      : ["map alias"],
             "description"   : "Name of the map to add the rule to",
             "data_type"     : "string",
-            "required"      : true
+            "required"      : true,
+            "order"         : 1
           },
-          "Rule_type"       : {
+          "rule_type"       : {
             "description"   : "pass|drop",
             "data_type"     : "string",
-            "required"      : true
+            "required"      : true,
+            "order"         : 2
           },
-          "Rule_ID"         : {
-            "contains"      : ["Rule_ID"],
+          "rule_id"         : {
+            "contains"      : ["rule id"],
             "data_type"     : "string",
             "description"   : "The next available rule id value",
-            "required"      : true
+            "required"      : true,
+            "order"         : 3
           },
-          "IPv4_Address"    : {
+          "ip"    : {
             "data_type"     : "string",
+            "contains"      : ["ip"],
             "description"   : "address to add to the map",
-            "required"      : true
+            "required"      : true,
+            "order"         : 4
           }
         },
         "render"            : { 
@@ -164,34 +179,35 @@
             "column_name"   : "Return Code"
           },
           {   
-            "data_path"     : "action_result.parameter.Cluster_ID",
+            "data_path"     : "action_result.parameter.cluster_id",
             "data_type"     : "string",
-            "contains"      : ["Cluster_ID"],
+            "contains"      : ["cluster id"],
             "column_order"  : 0,
             "column_name"   : "Cluster ID"
           },
           {   
-            "data_path"     : "action_result.parameter.Map_alias",
+            "data_path"     : "action_result.parameter.map_alias",
             "data_type"     : "string",
-            "contains"      : ["Map_alias"],
+            "contains"      : ["map alias"],
             "column_order"  : 1,
             "column_name"   : "Alias"
           },
           {   
-            "data_path"     : "action_result.parameter.IPv4_Address",
+            "data_path"     : "action_result.parameter.ip",
             "data_type"     : "string",
+            "contains"      : ["ip"],
             "column_order"  : 2,
             "column_name"   : "IPV4 Address"
           },
           {   
-            "data_path"     : "action_result.parameter.Rule_ID",
+            "data_path"     : "action_result.parameter.rule_id",
             "data_type"     : "string",
-            "contains"      : ["Rule_ID"],
+            "contains"      : ["rule id"],
             "column_order"  : 3,
             "column_name"   : "Rule ID"
           },
           {   
-            "data_path"     : "action_result.parameter.Rule_type",
+            "data_path"     : "action_result.parameter.rule_type",
             "data_type"     : "string",
             "column_order"  : 4,
             "column_name"   : "Rule Type"
@@ -210,21 +226,21 @@
         "identifier"        : "delete_rule",
         "read_only"         : true,
         "parameters"        : {
-          "Cluster_ID"      : {
-            "contains"      : ["Cluster_ID"],
+          "cluster_id"      : {
+            "contains"      : ["cluster id"],
             "description"   : "Node IP/FQDN",
             "data_type"     : "string",
             "primary"       : true,
             "required"      : true
             },
-          "Map_alias"       : {
-            "contains"      : ["Map_alias"],
+          "map_alias"       : {
+            "contains"      : ["map alias"],
             "description"   : "Name of the map to remove the rule from",
             "data_type"     : "string",
             "required"      : true
           },
-          "Rule_ID"         : {
-            "contains"      : ["Rule_ID"],
+          "rule_id"         : {
+            "contains"      : ["rule id"],
             "data_type"     : "string",
             "description"   : "ID of the rule to remove",
             "required"      : true
@@ -242,23 +258,23 @@
             "data_type"     : "string"
           },
           {
-            "data_path"     : "action_result.parameter.Cluster_ID",
+            "data_path"     : "action_result.parameter.cluster_id",
             "data_type"     : "string",
-            "contains"      : ["Cluster_ID"],
+            "contains"      : ["cluster id"],
             "column_order"  : 0,
             "column_name"   : "Cluster ID"
           },
           {
-            "data_path"     : "action_result.parameter.Map_alias",
+            "data_path"     : "action_result.parameter.map_alias",
             "data_type"     : "string",
-            "contains"      : ["Map_alias"],
+            "contains"      : ["map alias"],
             "column_order"  : 1,
             "column_name"   : "Alias"
           },
           {
-            "data_path"     : "action_result.parameter.Rule_ID",
+            "data_path"     : "action_result.parameter.rule_id",
             "data_type"     : "string",
-            "contains"      : ["Rule_ID"],
+            "contains"      : ["rule id"],
             "column_order"  : 2,
             "column_name"   : "Rule ID"
           },
