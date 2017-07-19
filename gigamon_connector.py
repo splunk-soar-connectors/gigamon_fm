@@ -21,7 +21,7 @@ import time
 import gigamon_consts as CONSTS
 
 # disable request warnings about certs (testing only)
-requests.packages.urllib3.disable_warnings()
+requests.packages.urllib3.disable_warnings()  # pylint: disable=E1101
 
 
 # Define the App Class
