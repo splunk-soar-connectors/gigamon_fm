@@ -3,7 +3,7 @@
 # File: gigamon_connector.py
 # --
 # -----------------------------------------
-# Gigamon sample App Connector python file
+# Gigamon App Connector python file
 # -----------------------------------------
 
 # Phantom App imports
@@ -19,9 +19,6 @@ import time
 
 # Imports form other files
 import gigamon_consts as CONSTS
-
-# disable request warnings about certs (testing only)
-requests.packages.urllib3.disable_warnings()  # pylint: disable=E1101
 
 
 # Define the App Class
