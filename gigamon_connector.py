@@ -3,7 +3,7 @@
 # File: gigamon_connector.py
 # --
 # -----------------------------------------
-# Gigamon sample App Connector python file
+# Gigamon App Connector python file
 # -----------------------------------------
 
 # Phantom App imports
@@ -19,9 +19,6 @@ import time
 
 # Imports form other files
 import gigamon_consts as CONSTS
-
-# disable request warnings about certs (testing only)
-requests.packages.urllib3.disable_warnings()
 
 
 # Define the App Class
@@ -104,8 +101,8 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build url
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
         URL = ("https://"
                + server
                + "/api/v1.3/maps/"
@@ -159,9 +156,9 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # url parameters
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
-        ruleType = param['Rule_type']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
+        ruleType = param['rule_type']
         URL = ("https://"
                + server
                + "/api/v1.3/maps/"
@@ -226,8 +223,8 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build url
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
         ruleID = param['Rule_ID']
         URL = ("https://"
                + server
