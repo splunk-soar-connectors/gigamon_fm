@@ -1,7 +1,7 @@
 {
     "product_version_regex": ".*",
     "python_version": "2.7",
-    "package_name": "Gigamon",
+    "package_name": "phantom_gigavuefm",
     "actions": [
         {
             "read_only": true,
