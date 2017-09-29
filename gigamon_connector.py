@@ -3,7 +3,7 @@
 # File: gigamon_connector.py
 # --
 # -----------------------------------------
-# Gigamon sample App Connector python file
+# Gigamon App Connector python file
 # -----------------------------------------
 
 # Phantom App imports
