@@ -341,7 +341,7 @@
     "executable": "spawn",
     "appname": "-",
     "version": 1,
-    "app_version": "1.0.1",
+    "app_version": "1.0.2",
     "type": "information",
     "product_name": "Gigamon Application for Phantom",
     "description": "This app leverages APIs from GigaVUE-FM 5.1 and above to perform investigative and corrective actions",
