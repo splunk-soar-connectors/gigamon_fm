@@ -20,9 +20,6 @@ import time
 # Imports form other files
 import gigamon_consts as CONSTS
 
-# disable request warnings about certs (testing only)
-requests.packages.urllib3.disable_warnings()
-
 
 # Define the App Class
 class GigamonApiConnector(BaseConnector):
