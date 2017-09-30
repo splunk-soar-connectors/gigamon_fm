@@ -5,7 +5,7 @@
     "actions": [
         {
             "read_only": true,
-            "description": "Validate the asset configuration for connectivity.",
+            "description": "Validate the asset configuration for connectivity",
             "parameters": {},
             "versions": "EQ(*)",
             "action": "test connectivity",
