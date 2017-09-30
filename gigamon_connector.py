@@ -282,7 +282,7 @@ class GigamonApiConnector(BaseConnector):
                    "bidi": "false",
                    "matches": [{
                        "type": "ip4Src",
-                       "value": param['ivv4_address'],
+                       "value": param['ipv4_address'],
                        "netMask": "255.255.255.255"}]}
 
         # log in and post a rule to the map
