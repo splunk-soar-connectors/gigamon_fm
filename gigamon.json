@@ -31,22 +31,26 @@
                     "data_type": "string"
                 },
                 {
+                     "data_path": "action_result.message",
+                     "data_type": "string"
+                },
+               {
                     "data_path": "action_result.summary",
                     "data_type": "string"
                 },
                 {
                     "column_name": "Cluster ID",
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
-                    "data_path": "action_result.parameter.Cluster_ID",
+                    "data_path": "action_result.parameter.cluster_id",
                     "data_type": "string",
                     "column_order": 0
                 },
                 {
                     "column_name": "Maps",
                     "contains": [
-                        "Maps"
+                        "maps"
                     ],
                     "data_path": "action_result.data.*.maps.*.alias",
                     "data_type": "string",
@@ -54,9 +58,9 @@
                 }
             ],
             "parameters": {
-                "Cluster_ID": {
+                "cluster_id": {
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
                     "required": true,
                     "description": "Node IP/FQDN",
@@ -84,17 +88,21 @@
                     "data_type": "string"
                 },
                 {
+                     "data_path": "action_result.message",
+                     "data_type": "string"
+                },
+                {
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
-                    "data_path": "action_result.parameter.Map_alias",
+                    "data_path": "action_result.parameter.map_alias",
                     "data_type": "string",
                     "column_name": "alias"
                 },
                 {
                     "column_name": "alias",
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
                     "data_path": "action_result.data.*.map.rules.*.*.alias",
                     "data_type": "string",
@@ -107,18 +115,18 @@
                 },
                 {
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
-                    "data_path": "action_result.parameter.Cluster_ID",
+                    "data_path": "action_result.parameter.cluster_id",
                     "data_type": "string",
                     "column_name": "Cluster ID"
                 },
                 {
                     "column_name": "Cluster ID",
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
-                    "data_path": "action_result.data.*.map.rules.*.*.clusterId",
+                    "data_path": "action_result.data.*.map.rules.*.*.cluster_id",
                     "data_type": "string",
                     "column_order": 0
                 },
@@ -130,7 +138,7 @@
                 },
                 {
                     "column_name": "Rule ID",
-                    "data_path": "action_result.data.*.map.rules.*.*.ruleId",
+                    "data_path": "action_result.data.*.map.rules.*.*.ruleid",
                     "data_type": "string",
                     "column_order": 3
                 },
@@ -142,18 +150,18 @@
                 }
             ],
             "parameters": {
-                "Cluster_ID": {
+                "cluster_id": {
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
                     "required": true,
                     "description": "Node IP/FQDN",
                     "data_type": "string",
                     "primary": true
                 },
-                "Map_alias": {
+                "map_alias": {
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
                     "description": "Name of the map to get",
                     "data_type": "string",
@@ -180,6 +188,10 @@
                     "data_type": "string"
                 },
                 {
+                     "data_path": "action_result.message",
+                     "data_type": "string"
+                },
+                {
                     "column_name": "Return Code",
                     "data_path": "action_result.data.*.return_code",
                     "data_type": "string",
@@ -188,30 +200,30 @@
                 {
                     "column_name": "Cluster ID",
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
-                    "data_path": "action_result.parameter.Cluster_ID",
+                    "data_path": "action_result.parameter.cluster_id",
                     "data_type": "string",
                     "column_order": 0
                 },
                 {
                     "column_name": "Alias",
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
-                    "data_path": "action_result.parameter.Map_alias",
+                    "data_path": "action_result.parameter.map_alias",
                     "data_type": "string",
                     "column_order": 1
                 },
                 {
                     "column_name": "IPV4 Address",
-                    "data_path": "action_result.parameter.IPv4_Address",
+                    "data_path": "action_result.parameter.ipv4_address",
                     "data_type": "string",
                     "column_order": 2
                 },
                 {
                     "column_name": "Rule Type",
-                    "data_path": "action_result.parameter.Rule_type",
+                    "data_path": "action_result.parameter.rule_type",
                     "data_type": "string",
                     "column_order": 4
                 },
@@ -221,28 +233,28 @@
                 }
             ],
             "parameters": {
-                "IPv4_Address": {
+                "ipv4_address": {
                     "required": true,
                     "description": "address to add to the map",
                     "data_type": "string"
                 },
-                "Rule_type": {
+                "rule_type": {
                     "required": true,
                     "description": "pass|drop",
                     "data_type": "string"
                 },
-                "Cluster_ID": {
+                "cluster_id": {
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
                     "required": true,
                     "description": "Node IP/FQDN",
                     "data_type": "string",
                     "primary": true
                 },
-                "Map_alias": {
+                "map_alias": {
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
                     "description": "Name of the map to add the rule to",
                     "data_type": "string",
@@ -269,29 +281,33 @@
                     "data_type": "string"
                 },
                 {
+                     "data_path": "action_result.message",
+                     "data_type": "string"
+                },
+                {
                     "column_name": "Cluster ID",
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
-                    "data_path": "action_result.parameter.Cluster_ID",
+                    "data_path": "action_result.parameter.cluster_id",
                     "data_type": "string",
                     "column_order": 0
                 },
                 {
                     "column_name": "Alias",
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
-                    "data_path": "action_result.parameter.Map_alias",
+                    "data_path": "action_result.parameter.map_alias",
                     "data_type": "string",
                     "column_order": 1
                 },
                 {
                     "column_name": "Rule ID",
                     "contains": [
-                        "Rule_ID"
+                        "rule id"
                     ],
-                    "data_path": "action_result.parameter.Rule_ID",
+                    "data_path": "action_result.parameter.rule_id",
                     "data_type": "string",
                     "column_order": 2
                 },
@@ -307,26 +323,26 @@
                 }
             ],
             "parameters": {
-                "Cluster_ID": {
+                "cluster_id": {
                     "contains": [
-                        "Cluster_ID"
+                        "cluster id"
                     ],
                     "required": true,
                     "description": "Node IP/FQDN",
                     "data_type": "string",
                     "primary": true
                 },
-                "Rule_ID": {
+                "rule_id": {
                     "contains": [
-                        "Rule_ID"
+                        "rule id"
                     ],
                     "description": "ID of the rule to remove",
                     "data_type": "string",
                     "required": true
                 },
-                "Map_alias": {
+                "map_alias": {
                     "contains": [
-                        "Map_alias"
+                        "map alias"
                     ],
                     "description": "Name of the map to remove the rule from",
                     "data_type": "string",
@@ -341,7 +357,7 @@
     "executable": "spawn",
     "appname": "-",
     "version": 1,
-    "app_version": "1.0.2",
+    "app_version": "1.0.3",
     "type": "information",
     "product_name": "Gigamon Application for Phantom",
     "description": "This app leverages APIs from GigaVUE-FM 5.1 and above to perform investigative and corrective actions",
@@ -371,5 +387,5 @@
     "appid": "876ab991-313e-48e7-bccd-e8c9650c239a",
     "directory": "gigamonapplicationforphantom_876ab991-313e-48e7-bccd-e8c9650c239a",
     "min_phantom_version": "3.0.251",
-    "main_module": "gigamon_connector.py"
+    "main_module": "gigamon_connector.pyc"
 }
