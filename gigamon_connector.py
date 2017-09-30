@@ -102,8 +102,8 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build gigamon api url
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
         URL = ("https://"
                + server
                + "/api/v1.3/maps/"
@@ -173,7 +173,7 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build gigamon api url
-        clusterId = param['Cluster_ID']
+        clusterId = param['cluster_id']
         URL = ("https://"
                + server
                + "/api/v1.3/maps?clusterId="
@@ -225,8 +225,8 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # url paramenters
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
 
         # map url parameters
         MAP_URL = ("https://"
@@ -266,7 +266,7 @@ class GigamonApiConnector(BaseConnector):
             next_rule_id = 1
 
         # post url parameters
-        ruleType = param['Rule_type']
+        ruleType = param['rule_type']
         POST_URL = ("https://"
                     + server
                     + "/api/v1.3/maps/"
@@ -282,7 +282,7 @@ class GigamonApiConnector(BaseConnector):
                    "bidi": "false",
                    "matches": [{
                        "type": "ip4Src",
-                       "value": param['IPv4_Address'],
+                       "value": param['ivv4_address'],
                        "netMask": "255.255.255.255"}]}
 
         # log in and post a rule to the map
@@ -331,9 +331,9 @@ class GigamonApiConnector(BaseConnector):
         passwd = config.get('FM_password')
 
         # build gigamon api url
-        clusterId = param['Cluster_ID']
-        mapAlias = param['Map_alias']
-        ruleID = param['Rule_ID']
+        clusterId = param['cluster_id']
+        mapAlias = param['map_alias']
+        ruleID = param['rule_id']
         URL = ("https://"
                + server
                + "/api/v1.3/maps/"
