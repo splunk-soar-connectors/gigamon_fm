@@ -31,10 +31,10 @@
                     "data_type": "string"
                 },
                 {
-                     "data_path": "action_result.message",
-                     "data_type": "string"
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
-               {
+                {
                     "data_path": "action_result.summary",
                     "data_type": "string"
                 },
@@ -88,8 +88,8 @@
                     "data_type": "string"
                 },
                 {
-                     "data_path": "action_result.message",
-                     "data_type": "string"
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
                 {
                     "contains": [
@@ -188,8 +188,8 @@
                     "data_type": "string"
                 },
                 {
-                     "data_path": "action_result.message",
-                     "data_type": "string"
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
                 {
                     "column_name": "Return Code",
@@ -281,8 +281,8 @@
                     "data_type": "string"
                 },
                 {
-                     "data_path": "action_result.message",
-                     "data_type": "string"
+                    "data_path": "action_result.message",
+                    "data_type": "string"
                 },
                 {
                     "column_name": "Cluster ID",
@@ -387,5 +387,29 @@
     "appid": "876ab991-313e-48e7-bccd-e8c9650c239a",
     "directory": "gigamonapplicationforphantom_876ab991-313e-48e7-bccd-e8c9650c239a",
     "min_phantom_version": "3.0.251",
-    "main_module": "gigamon_connector.pyc"
+    "main_module": "gigamon_connector.pyc",
+    "pip_dependencies": {
+        "wheel": [
+            {
+                "module": "certifi",
+                "input_file": "wheels/certifi-2021.10.8-py2.py3-none-any.whl"
+            },
+            {
+                "module": "chardet",
+                "input_file": "wheels/chardet-3.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "module": "idna",
+                "input_file": "wheels/idna-2.10-py2.py3-none-any.whl"
+            },
+            {
+                "module": "requests",
+                "input_file": "wheels/requests-2.25.0-py2.py3-none-any.whl"
+            },
+            {
+                "module": "urllib3",
+                "input_file": "wheels/urllib3-1.26.7-py2.py3-none-any.whl"
+            }
+        ]
+    }
 }
